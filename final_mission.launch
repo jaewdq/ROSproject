@@ -1,0 +1,18 @@
+<launch>
+    <include file="$(find offboard_py)/launch/two_drones_sitl.launch">
+        <arg name="gui" value="true"/>
+    </include>
+
+    <group ns="uav0">
+        <node pkg="offboard_py" type="yolo_chase.py" name="yolo_node" output="screen" />
+        
+        <node pkg="offboard_py" type="patrol_and_chase_pid.py" name="control_node" output="screen" />
+    </group>
+
+    <node pkg="offboard_py" type="uav1_bridge.py" name="uav1_bridge_node" output="screen" />
+
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="uav1_teleop_node" 
+          args="cmd_vel:=/uav1/manual_cmd_vel" 
+          launch-prefix="gnome-terminal --" />
+
+</launch>
