@@ -1,0 +1,12 @@
+goto_point_isaac:
+  ros__parameters:
+    reach_tolerance: 0.30
+    hover_time_sec: 3.0
+    preland_hover_time_sec: 2.0
+    preland_xy_tolerance: 0.10
+    yaw_align_deg: 90.0
+
+    waypoint_names: ["A-1", "A-2", "B-1", "B-2"]
+    waypoint_local_dx: [3.5, 0.7, 3.5, 0.7]
+    waypoint_local_dy: [-4.0, -4.0, -1.9, -1.9]
+    waypoint_local_z:  [-1.6, -1.6, -1.6, -1.6]
